@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="lo">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f1">
+  <meta name="description" content="Mali Market ຄັດສັນຂອງໃຊ້ດີໆ ສົ່ງຄວາມສຸກເຖິງບ້ານທ່ານ">
+  <title>Mali Market | ຂອງດີທີ່ຄັດສັນມາເພື່ອທ່ານ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">ສົ່ງຟຣີ ເມື່ອຊື້ຄົບ 500,000 ₭ <span>·</span> ສົ່ງທົ່ວລາວ</div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Mali Market ໜ້າຫຼັກ">
+      <span class="brand-mark" aria-hidden="true">m</span>
+      <span class="brand-name">mali<span>.</span><small>MARKET</small></span>
+    </a>
+    <form class="search" id="search-form" role="search">
+      <button class="icon-button search-submit" type="submit" aria-label="ຄົ້ນຫາ"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg></button>
+      <input id="search-input" type="search" placeholder="ຄົ້ນຫາສິນຄ້າ..." autocomplete="off">
+      <kbd>⌘ K</kbd>
+    </form>
+    <div class="header-actions">
+      <button class="icon-button favorite-filter" id="favorites-toggle" type="button" aria-label="ສະແດງລາຍການທີ່ມັກ" title="ລາຍການທີ່ມັກ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.7c0 5.1-8.8 10.1-8.8 10.1S3.2 13.8 3.2 8.7A4.6 4.6 0 0 1 12 6a4.6 4.6 0 0 1 8.8 2.7Z"></path></svg></button>
+      <button class="cart-trigger" id="cart-open" type="button" aria-label="ເປີດກະຕ່າ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.5L22 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg><span>ກະຕ່າ</span><b id="cart-count">0</b></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> ຄັດສັນຢ່າງຕັ້ງໃຈ</p>
+        <h1 id="hero-title">ຂອງດີໆ<br>ສຳລັບທຸກມື້</h1>
+        <p class="hero-description">ເລືອກສິ່ງທີ່ຮັກ ໃນສະບັບທີ່ເປັນຕົວທ່ານ. ສິນຄ້າຄຸນນະພາບດີ ສົ່ງຈາກໃຈເຖິງມືທ່ານ.</p>
+        <a class="hero-link" href="#products">ເລືອກຊື້ເລີຍ <span aria-hidden="true">↗</span></a>
+        <div class="hero-index"><strong>01</strong><span></span><small>ຄັດສັນປະຈຳອາທິດ</small></div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1400&q=85" alt="ຂວດນ້ຳດີໄຊນ໌ສວຍງາມ ສຳລັບໃຊ້ທຸກມື້">
+        <div class="hero-stamp"><span>made for</span><strong>your<br>everyday</strong></div>
+        <div class="hero-caption"><span>01 / 04</span><span>ເລືອກຄວາມງາມໃຫ້ມື້ທຳມະດາ</span></div>
+      </div>
+    </section>
+
+    <section class="shop-section" id="products" aria-labelledby="products-title">
+      <div class="section-heading">
+        <div><p class="eyebrow section-kicker">THE GOOD FINDS</p><h2 id="products-title">ສິນຄ້າຄັດສັນ</h2></div>
+        <label class="sort-control">ຈັດລຽງ<select id="sort-select" aria-label="ຈັດລຽງສິນຄ້າ"><option value="featured">ແນະນຳ</option><option value="price-low">ລາຄາ: ຕ່ຳຫາສູງ</option><option value="price-high">ລາຄາ: ສູງຫາຕ່ຳ</option><option value="rating">ຄະແນນສູງສຸດ</option></select></label>
+      </div>
+      <nav class="categories" id="category-list" aria-label="ໝວດໝູ່ສິນຄ້າ"></nav>
+      <div class="results-line"><span id="results-count" aria-live="polite"></span><button id="clear-filters" class="clear-filters" type="button" hidden>ລ້າງຕົວກອງ</button></div>
+      <div class="product-grid" id="product-grid"></div>
+      <div class="empty-state" id="empty-state" hidden><span>⌕</span><h3>ບໍ່ພົບສິນຄ້າ</h3><p>ລອງຄົ້ນຫາດ້ວຍຄຳອື່ນ ຫຼືເລືອກໝວດໝູ່ໃໝ່.</p></div>
+    </section>
+
+    <section class="promise-band" aria-label="ບໍລິການຂອງຮ້ານ">
+      <div><span class="promise-number">01</span><div><strong>ຄັດຄຸນນະພາບ</strong><small>ຂອງດີທີ່ເຮົາເລືອກເອງ</small></div></div>
+      <div><span class="promise-number">02</span><div><strong>ສົ່ງທົ່ວລາວ</strong><small>ສົ່ງຟຣີ ເມື່ອຄົບ 500,000 ₭</small></div></div>
+      <div><span class="promise-number">03</span><div><strong>ດູແລດ້ວຍໃຈ</strong><small>ພ້ອມຊ່ວຍເຫຼືອທຸກຂັ້ນຕອນ</small></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">m</span><span class="brand-name">mali<span>.</span><small>MARKET</small></span></a><p>ຂອງດີທີ່ຄັດສັນມາເພື່ອທ່ານ.</p><small>© 2026 MALI MARKET</small></footer>
+
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-modal="true" role="dialog" hidden>
+    <div class="drawer-head"><div><p class="eyebrow">YOUR SELECTION</p><h2 id="cart-title">ກະຕ່າຂອງທ່ານ <span id="drawer-count">(0)</span></h2></div><button class="icon-button close-drawer" id="cart-close" type="button" aria-label="ປິດກະຕ່າ">×</button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-empty" id="cart-empty"><span>♡</span><p>ກະຕ່າຂອງທ່ານຍັງວ່າງຢູ່</p><button id="continue-shopping" type="button">ເລືອກຊື້ສິນຄ້າ</button></div>
+    <div class="cart-summary" id="cart-summary" hidden><p class="shipping-note" id="shipping-note"></p><div class="subtotal"><span>ລວມຄ່າສິນຄ້າ</span><strong id="cart-subtotal">0 ₭</strong></div><button class="checkout-button" id="checkout-open" type="button">ດຳເນີນການສັ່ງຊື້ <span>→</span></button><small class="secure-note">ຊຳລະເງິນປາຍທາງ ຫຼືໂອນຜ່ານທະນາຄານ</small></div>
+  </aside>
+
+  <dialog class="checkout-dialog" id="checkout-dialog" aria-labelledby="checkout-title">
+    <form class="checkout-form" id="checkout-form">
+      <div class="dialog-head"><div><p class="eyebrow">ONE LAST STEP</p><h2 id="checkout-title">ຂໍ້ມູນຈັດສົ່ງ</h2></div><button class="icon-button" id="checkout-close" type="button" aria-label="ປິດ">×</button></div>
+      <label>ຊື່-ນາມສະກຸນ<input name="name" required autocomplete="name" placeholder="ຊື່ຂອງທ່ານ"></label>
+      <label>ເບີໂທ<input name="phone" type="tel" required autocomplete="tel" placeholder="20 XX XXX XXX"></label>
+      <label>ທີ່ຢູ່ຈັດສົ່ງ<textarea name="address" required autocomplete="street-address" rows="3" placeholder="ບ້ານ, ເມືອງ, ແຂວງ"></textarea></label>
+      <label>ວິທີຊຳລະ<select name="payment"><option value="cod">ຈ່າຍເງິນປາຍທາງ</option><option value="transfer">ໂອນຜ່ານທະນາຄານ</option></select></label>
+      <div class="checkout-total"><span>ຍອດຊຳລະ</span><strong id="checkout-total">0 ₭</strong></div>
+      <button class="checkout-button" type="submit">ຢືນຢັນການສັ່ງຊື້ <span>→</span></button>
+      <small class="prototype-note">ການສັ່ງຊື້ນີ້ເປັນຕົວຢ່າງ ແລະຍັງບໍ່ມີການຊຳລະເງິນຈິງ.</small>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
